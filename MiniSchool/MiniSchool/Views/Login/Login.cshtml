@@ -1,0 +1,70 @@
+﻿@model MiniSchool.Models.User
+
+<section class="vh-100" style="background-image: url('https://img.freepik.com/free-vector/school-building-with-clock-tower_1308-96430.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <!-- الفورم -->
+                    <div class="form-container p-4">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            @Html.LabelFor(m => m.Email, new { @class = "form-label", })
+                            @Html.TextBoxFor(m => m.Email, new { id = "form3Example3", @class = "form-control form-control-lg", placeholder = "Enter  email ", required = "required" })
+
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            @Html.LabelFor(m => m.Password, new { @class = "form-label", })
+                            @Html.PasswordFor(m => m.Password, new { id = "form3Example4", @class = "form-control form-control-lg", placeholder = "Enter password", required = "required" })
+
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ستايل جديد للفورم مع إطار ولون الأزرق */
+    .form-container {
+        border: 2px solid #007bff; /* لون الإطار الأزرق */
+        box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5); /* ظل أزرق */
+        border-radius: 10px; /* لتنعيم الحواف */
+        background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء مع شفافية خفيفة */
+    }
+
+    /* تعديل ارتفاع الصفحة */
+    .h-custom {
+        height: calc(100% - 73px);
+    }
+
+    /* ضبط حجم الخلفية */
+    section {
+        background-size: cover; /* تغطية الخلفية بالكامل */
+        background-position: center; /* مركز الصورة */
+    }
+
+    /* زر الأزرق */
+    .btn-primary {
+        background-color: #007bff; /* زر أزرق */
+        border-color: #007bff; /* إطار الزر الأزرق */
+        color: #fff; /* لون النص الأبيض */
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* لون أزرق داكن عند التحريك */
+            border-color: #0056b3; /* لون إطار أزرق داكن عند التحريك */
+        }
+
+</style>
+
+
+
